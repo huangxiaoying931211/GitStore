@@ -1,3 +1,27 @@
-git init [在一个目录下出生化，会将这个目录作为git的仓库]
+[git help 命令]使用命令的帮助
+
+git init [在一个目录下初始化，会将这个目录作为git的仓库]
+
 git add xxx.txt xx.txt [在仓库目录下执行，会将这些文件添加到git控制]
+
+git config --global user.email "1297455946@qq.com"
+git config --global user.name "huangxiaoying"
 git commit -m "git使用命令搜集"	[提交本次添加到git控制的文件]
+
+git status [查看仓库当前的状态]
+
+git diff [查看变动的内容]
+git diff HEAD -- gitCommand.txt [查看gitCommand.txt和库上的有什么不同]
+
+git log [查看提交的记录]
+
+git reset --hard HEAD^ [回退到上一个版本,上两个版本用HEAD^^,上N个版本用HEAD~N]
+git reset --hard 3928b2d423... [回到以前的版本后，在回到之后的版本]
+
+git reflog [查看使用过的命令]
+
+git checkout -- gitCommand.txt [撤销gitCommand.txt上一次的修改]
+
+git reset HEAD gitCommand.txt [将gitCommand.txt移出控制]
+
+git rm xx.txt [删除文件]
