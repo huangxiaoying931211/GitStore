@@ -1,11 +1,12 @@
 [git help 命令]使用命令的帮助
+/c/Users/Administrator/.ssh/id_rsa.pub [本机已完成ssh key设置，其存放路径为]
 
 git init [在一个目录下初始化，会将这个目录作为git的仓库]
 
 git add xxx.txt xx.txt [在仓库目录下执行，会将这些文件添加到git控制]
 
 git config --global user.email "1297455946@qq.com"
-git config --global user.name "huangxiaoying"
+git config --global user.name "huangxiaoying931211"
 git commit -m "git使用命令搜集"	[提交本次添加到git控制的文件]
 
 git status [查看仓库当前的状态]
@@ -25,3 +26,11 @@ git checkout -- gitCommand.txt [撤销gitCommand.txt上一次的修改]
 git reset HEAD gitCommand.txt [将gitCommand.txt移出控制]
 
 git rm xx.txt [删除文件]
+
+git remote add origin git@github.com:huangxiaoying931211/GitStore.git [关联服务器的repository]
+git push -u origin master [把本地库的内容推送到服务器]
+
+git clone git@github.com:huangxiaoying931211/GitStore.git [克隆一个仓库]
+
+git checkout -b dev [创建并切换dev分支,-b参数表示创建并切换]
+git branch [命令会列出所有分支，当前分支前面会标一个*号]
