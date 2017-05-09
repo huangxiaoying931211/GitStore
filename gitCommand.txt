@@ -5,6 +5,10 @@ git init [在一个目录下初始化，会将这个目录作为git的仓库]
 
 git add xxx.txt xx.txt [在仓库目录下执行，会将这些文件添加到git控制]
 
+git config --global alias.st status 为status起别名st
+[起别名实例]
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global color.ui true [显示颜色]
 git config --global user.email "1297455946@qq.com"
 git config --global user.name "huangxiaoying931211"
 git commit -m "git使用命令搜集"	[提交本次添加到git控制的文件]
@@ -32,5 +36,23 @@ git push -u origin master [把本地库的内容推送到服务器]
 
 git clone git@github.com:huangxiaoying931211/GitStore.git [克隆一个仓库]
 
-git checkout -b dev [创建并切换dev分支,-b参数表示创建并切换]
+git checkout -b dev [创建并切换dev分支,-b参数表示创建并切换]  等同于 1.git branch dev [创建dev分支] 2.git checkout dev [切换到dev分支]
 git branch [命令会列出所有分支，当前分支前面会标一个*号]
+git merge dev [合入dev分支的提交,使用Fast forward的方式]		git merge --no-ff -m "merge with no-ff" dev [禁用Fast forward的方式,可以看出来曾经做过合并]
+git branch -d dev [删除dev分支]			git log --graph [查看分支合并图]
+git branch -D <name> [强行删除没有合并的分支]
+
+git stash [把当前工作现场“储藏”起来]
+git stash list [查看“储藏”的工作现场]
+git stash pop [回到工作现场]
+
+git tag [查看所有的标签]
+git tag v1.2 [把所在的分支打上v1.2的标签]
+git tag v0.9 6224937... [把某一次的提交6224937...打上v0.9的标签]
+git show <tagname> [查看标签信息]
+git tag -d v0.1 [删除v0.1标签]
+git push origin <tagname> [可以推送一个本地标签]
+git push origin --tags [可以推送全部未推送过的本地标签]
+git push origin :refs/tags/<tagname> [可以删除一个远程标签]
+
+在Git工作区的根目录下创建一个特殊的.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略这些文件。
